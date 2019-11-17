@@ -39,11 +39,19 @@
 		        </div>
 		    </div>
 		    <div class="col-xs-12 col-sm-12 col-md-12">
-		        <div class="form-group">
-		            <strong>Detail:</strong>
-		            <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail">{{ $product->detail }}</textarea>
-		        </div>
-		    </div>
+                <div class="form-group">
+                    <strong>Price:</strong>
+                    <input type="number" value="{{ $product->price }}" name="price" class="form-control" placeholder="Price">                    
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Status:</strong>
+                    <select name="in_stock" id="in_stock"  class="form-control">
+                        <option value="1">Available</option>
+                        <option value="0">Not Available</option>
+                    </select>
+                </div>
 		    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
 		      <button type="submit" class="btn btn-primary">Submit</button>
 		    </div>

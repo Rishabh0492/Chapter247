@@ -6,6 +6,7 @@ use Spatie\Permission\Models\Role;
 use DataTables;
 use DB;
 use App\Customer;
+use DateTime;
 
 class CustomerController extends Controller
 {
@@ -61,7 +62,8 @@ class CustomerController extends Controller
         $customers = DB::table('customers')->select('*');
         return Datatables::of($customers)->addIndexColumn()->editColumn('created_at', function ($customers)
         {
-            return $customers->created_at;
+            $datetime = new DateTime($customers->dob); 
+            return $datetime->format('d/m/Y'); ;
         })
         ->addColumn('action', function ($customers)
         {

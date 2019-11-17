@@ -27,14 +27,16 @@
         <tr>
             <th>No</th>
             <th>Name</th>
-            <th>Details</th>
+            <th>price</th>
+            <th>Status</th>
             <th width="280px">Action</th>
         </tr>
 	    @foreach ($products as $product)
 	    <tr>
-	        <td>{{ ++$i }}</td>
+	        <td>{{$loop->index+1 }}</td>
 	        <td>{{ $product->name }}</td>
-	        <td>{{ $product->detail }}</td>
+            <td>{{ $product->price }}</td>
+	        <td>{{ $product->in_stock==1?'Available':'Not Available' }}</td>
 	        <td>
                 <form action="{{ route('products.destroy',$product->id) }}" method="POST">
                     <a class="btn btn-info" href="{{ route('products.show',$product->id) }}">Show</a>
