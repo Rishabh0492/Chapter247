@@ -41,6 +41,12 @@
             {!! Form::text('email', null, array('placeholder' => 'Email','class' => 'form-control')) !!}
         </div>
     </div>
+ <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>DOB:</strong>
+            {!! Form::date('dob', null, array('placeholder' => 'DOB','class' => 'form-control')) !!}
+        </div>
+    </div>
  
  
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
